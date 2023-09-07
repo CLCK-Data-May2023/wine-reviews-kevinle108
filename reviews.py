@@ -9,7 +9,7 @@ country_counts = df['country'].value_counts().reset_index()
 country_counts.columns = ['country', 'count']
 # print(country_counts)
 
-points = df.groupby('country').points.mean()
+points = df.groupby('country').points.mean().round(1)
 final = pd.merge(country_counts, points, on='country')
 # print(final)
 
